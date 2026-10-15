@@ -8,8 +8,34 @@ export const hero = {
   subhead: "Serious nutrition. Squeezably delicious.",
   body: "A protein-packed, caffeinated pudding made for people with places to be, companies to build, and absolutely no time for another sad protein bar.",
   kicker: "Toss it in your bag. Squeeze whenever. Conquer whatever.",
-  cta: "Shop Pocket Puddings",
-  ctaNote: "Get 20% off your first bulk order.",
+  cta: "Pre-order now!",
+  ctaNote: "Get 20% off your first order!",
+};
+
+export const preorder = {
+  title: "Get first dibs.",
+  subtitle: "Two ways to get your hands on the very first pouches.",
+  order: {
+    label: "Option 1",
+    title: "Pre-order now",
+    pack: "Pack of 6 pouches",
+    fullPrice: "$30",
+    price: "$24",
+    priceNote: "paid today",
+    explainer: "That\u2019s 20% off the $30 pack price for paying upfront. We\u2019ll ship your 6 pouches as soon as the first batch is ready.",
+    cta: "Pre-order for $24",
+    secure: "Secure checkout with Stripe",
+    unavailable: "Pre-orders open very soon",
+  },
+  list: {
+    label: "Option 2",
+    title: "Join the mailing list",
+    body: "Not ready to commit? Get launch news, restock alerts, and the occasional pudding pun.",
+    placeholder: "you@company.com",
+    cta: "Join the list",
+    pending: "Joining\u2026",
+    fine: "No spam. Unsubscribe anytime.",
+  },
 };
 
 export const marquee = [

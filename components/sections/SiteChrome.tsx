@@ -1,3 +1,4 @@
+import { PreorderButton } from "../Preorder";
 import { PouchSticker } from "../Stickers";
 
 const links = [
@@ -19,9 +20,9 @@ export function Header() {
             {l.label}
           </a>
         ))}
-        <a href="#shop" className="squish rounded-full border-[3px] border-ink bg-butter px-4 py-1.5 !shadow-[3px_3px_0_var(--color-ink)]">
-          Shop
-        </a>
+        <PreorderButton arrow={false} className="squish rounded-full border-[3px] border-ink bg-butter px-4 py-1.5 !shadow-[3px_3px_0_var(--color-ink)]">
+          Pre-order
+        </PreorderButton>
       </nav>
     </header>
   );

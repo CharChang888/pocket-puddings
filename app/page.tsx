@@ -1,3 +1,4 @@
+import { PreorderProvider } from "@/components/Preorder";
 import { StickerRail } from "@/components/StickerRail";
 import { Benefits } from "@/components/sections/Benefits";
 import { BrandStory } from "@/components/sections/BrandStory";
@@ -12,7 +13,7 @@ import { UseCases } from "@/components/sections/UseCases";
 
 export default function Home() {
   return (
-    <>
+    <PreorderProvider>
       <StickerRail />
       <main className="grid-paper relative mx-auto max-w-[1180px] overflow-hidden shadow-[0_0_40px_rgb(0_0_0/0.12)] lg:w-[84vw]">
         <Header />
@@ -27,6 +28,6 @@ export default function Home() {
         <FinalCta />
         <Footer />
       </main>
-    </>
+    </PreorderProvider>
   );
 }

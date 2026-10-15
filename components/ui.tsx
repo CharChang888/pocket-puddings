@@ -163,28 +163,9 @@ export function Photo({
   );
 }
 
-export function Button({
-  href,
-  children,
-  variant = "cocoa",
-  className = "",
-}: {
-  href: string;
-  children: ReactNode;
-  variant?: "cocoa" | "butter";
-  className?: string;
-}) {
-  const look =
-    variant === "cocoa" ? "bg-cocoa text-cream" : "bg-butter text-ink";
-  return (
-    <a
-      href={href}
-      className={`squish inline-flex items-center gap-2 rounded-full border-[3px] border-ink px-7 py-3.5 text-lg font-bold tracking-wide ${look} ${className}`}
-    >
-      {children}
-      <span aria-hidden className="text-xl">&rarr;</span>
-    </a>
-  );
+export function buttonClass(variant: "cocoa" | "butter" = "cocoa") {
+  const look = variant === "cocoa" ? "bg-cocoa text-cream" : "bg-butter text-ink";
+  return `squish inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink px-7 py-3.5 text-lg font-bold tracking-wide ${look}`;
 }
 
 export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {

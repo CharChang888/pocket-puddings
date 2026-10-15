@@ -2,7 +2,8 @@ import { finalCta } from "@/lib/content";
 import { images } from "@/lib/images";
 import { tornClip } from "@/lib/torn";
 import { Reveal } from "../Reveal";
-import { Button, Photo, Tape } from "../ui";
+import { PreorderButton } from "../Preorder";
+import { Photo, Tape } from "../ui";
 
 export function FinalCta() {
   return (
@@ -23,9 +24,7 @@ export function FinalCta() {
               {finalCta.offerTail}
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
-              <Button href="#shop" variant="butter">
-                {finalCta.cta}
-              </Button>
+              <PreorderButton variant="butter">{finalCta.cta}</PreorderButton>
               <p className="text-3xl">
                 <Tape color="sky" rotate={4}>
                   {finalCta.signoff}

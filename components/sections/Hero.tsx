@@ -4,7 +4,8 @@ import { images } from "@/lib/images";
 import { tornClip } from "@/lib/torn";
 import { Reveal } from "../Reveal";
 import { SparkleSticker } from "../Stickers";
-import { Button, Photo, Tape, rotateVar } from "../ui";
+import { PreorderButton } from "../Preorder";
+import { Photo, Tape, rotateVar } from "../ui";
 
 export function Hero() {
   return (
@@ -64,7 +65,7 @@ export function Hero() {
           <p className="mt-6 text-lg leading-relaxed sm:text-xl">{hero.body}</p>
           <p className="mt-6 text-lg font-bold sm:text-xl">{hero.kicker}</p>
           <div className="mt-9 flex flex-col items-center gap-4">
-            <Button href="#shop">{hero.cta}</Button>
+            <PreorderButton>{hero.cta}</PreorderButton>
             <p className="font-hand text-2xl text-coral -rotate-2">
               <span aria-hidden>&#8618; </span>
               {hero.ctaNote}

@@ -6,14 +6,26 @@ import { preorder } from "@/lib/content";
 import { tornClip } from "@/lib/torn";
 import { buttonClass, Tape } from "./ui";
 
-const paymentLink = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK;
+type PreorderContextValue = {
+  openDialog: () => void;
+  paymentLink: string;
+};
 
-const PreorderContext = createContext<() => void>(() => {});
+const PreorderContext = createContext<PreorderContextValue>({
+  openDialog: () => {},
+  paymentLink: "",
+});
 
-export function PreorderProvider({ children }: { children: ReactNode }) {
+export function PreorderProvider({
+  children,
+  paymentLink,
+}: {
+  children: ReactNode;
+  paymentLink: string;
+}) {
   const [open, setOpen] = useState(false);
   return (
-    <PreorderContext.Provider value={() => setOpen(true)}>
+    <PreorderContext.Provider value={{ openDialog: () => setOpen(true), paymentLink }}>
       {children}
       <PreorderDialog open={open} onClose={() => setOpen(false)} />
     </PreorderContext.Provider>
@@ -31,7 +43,7 @@ export function PreorderButton({
   className?: string;
   arrow?: boolean;
 }) {
-  const openDialog = useContext(PreorderContext);
+  const { openDialog } = useContext(PreorderContext);
   return (
     <button type="button" onClick={openDialog} aria-haspopup="dialog" className={className ?? buttonClass(variant)}>
       {children}
@@ -92,6 +104,7 @@ function PreorderDialog({ open, onClose }: { open: boolean; onClose: () => void 
 
 function OrderOption() {
   const o = preorder.order;
+  const { paymentLink } = useContext(PreorderContext);
   return (
     <section className="relative flex flex-col border-[3px] border-ink bg-butter p-6 shadow-[6px_6px_0_var(--color-ink)] sm:p-7" style={{ rotate: "-1deg" }}>
       <p className="text-xs font-bold uppercase tracking-[0.25em] text-ink/60">{o.label}</p>
@@ -107,7 +120,12 @@ function OrderOption() {
       </div>
       <p className="mt-4 flex-1 leading-relaxed">{o.explainer}</p>
       {paymentLink ? (
-        <a href={paymentLink} className={`${buttonClass("cocoa")} mt-6 w-full`}>
+        <a
+          href={paymentLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${buttonClass("cocoa")} mt-6 w-full`}
+        >
           {o.cta}
           <span aria-hidden className="text-xl">
             &rarr;
@@ -143,7 +161,7 @@ function ListOption() {
           {state.message}
         </p>
       ) : (
-        <form action={formAction} className="mt-6 flex flex-col gap-3">
+        <form action={formAction} onSubmit={(event) => event.stopPropagation()} className="mt-6 flex flex-col gap-3">
           <label htmlFor="mailing-email" className="sr-only">
             Email address
           </label>

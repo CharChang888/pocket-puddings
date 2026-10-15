@@ -12,8 +12,10 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { UseCases } from "@/components/sections/UseCases";
 
 export default function Home() {
+  const paymentLink = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK ?? "";
+
   return (
-    <PreorderProvider>
+    <PreorderProvider paymentLink={paymentLink}>
       <StickerRail />
       <main className="grid-paper relative mx-auto max-w-[1180px] overflow-hidden shadow-[0_0_40px_rgb(0_0_0/0.12)] lg:w-[84vw]">
         <Header />

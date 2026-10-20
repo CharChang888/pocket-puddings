@@ -3,21 +3,18 @@ import type { CSSProperties, ElementType, ReactNode } from "react";
 import { tornStripPath } from "@/lib/torn";
 
 const tapeColors = {
-  periwinkle: "bg-periwinkle",
-  tangerine: "bg-tangerine",
-  bubblegum: "bg-bubblegum",
-  lime: "bg-lime",
-  butter: "bg-butter",
-  sky: "bg-sky",
-  coral: "bg-coral",
-  cream: "bg-cream",
+  navy: "bg-navy text-cream",
+  blue: "bg-blue text-cream",
+  coral: "bg-coral text-ink",
+  chocolate: "bg-chocolate text-cream",
+  cream: "bg-cream text-ink",
 } as const;
 
 export type TapeColor = keyof typeof tapeColors;
 
 export function Tape({
   children,
-  color = "periwinkle",
+  color = "navy",
   rotate = -2,
   as: Tag = "span",
   className = "",
@@ -30,7 +27,7 @@ export function Tape({
 }) {
   return (
     <Tag
-      className={`tape font-script leading-tight text-ink ${tapeColors[color]} ${className}`}
+      className={`tape font-script font-semibold leading-tight ${tapeColors[color]} ${className}`}
       style={{ transform: `rotate(${rotate}deg)` }}
     >
       {children}
@@ -163,8 +160,8 @@ export function Photo({
   );
 }
 
-export function buttonClass(variant: "cocoa" | "butter" = "cocoa") {
-  const look = variant === "cocoa" ? "bg-cocoa text-cream" : "bg-butter text-ink";
+export function buttonClass(variant: "navy" | "coral" = "navy") {
+  const look = variant === "navy" ? "bg-navy text-cream" : "bg-coral text-ink";
   return `squish inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink px-7 py-3.5 text-lg font-bold tracking-wide ${look}`;
 }
 

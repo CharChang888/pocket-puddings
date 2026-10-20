@@ -1,19 +1,19 @@
 import { finalCta } from "@/lib/content";
 import { images } from "@/lib/images";
 import { tornClip } from "@/lib/torn";
-import { Reveal } from "../Reveal";
 import { PreorderButton } from "../Preorder";
+import { Reveal } from "../Reveal";
 import { Photo, Tape } from "../ui";
 
 export function FinalCta() {
   return (
     <section id="shop" className="relative" style={{ clipPath: tornClip(77, { top: true }, 1.8, 50) }}>
-      <div className="relative bg-coral px-6 pb-24 pt-28 sm:px-12">
+      <div className="relative bg-[#e9e9e7] px-6 pb-24 pt-28 sm:px-12">
         <div className="crumpled absolute inset-0 opacity-50 mix-blend-multiply" />
-        <div className="relative grid items-center gap-14 lg:grid-cols-[1.3fr_1fr]">
+        <div className="page-inner relative grid items-center gap-14 lg:grid-cols-[1.3fr_1fr]">
           <Reveal>
             <h2 className="font-script text-5xl leading-[1.15] text-ink sm:text-6xl">
-              <Tape color="butter" rotate={-2} className="box-decoration-clone">
+              <Tape color="navy" rotate={-2} className="box-decoration-clone">
                 {finalCta.title}
               </Tape>
             </h2>
@@ -24,9 +24,9 @@ export function FinalCta() {
               {finalCta.offerTail}
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
-              <PreorderButton variant="butter">{finalCta.cta}</PreorderButton>
+              <PreorderButton variant="coral">{finalCta.cta}</PreorderButton>
               <p className="text-3xl">
-                <Tape color="sky" rotate={4}>
+                <Tape color="blue" rotate={4}>
                   {finalCta.signoff}
                 </Tape>
               </p>
@@ -34,7 +34,7 @@ export function FinalCta() {
           </Reveal>
           <Reveal delay={150} rotate={6} className="mx-auto w-full max-w-sm">
             <div className="animate-float">
-              <Photo src={images.product} alt="Pocket Puddings mocha pouch on a desk" frame="polaroid" rotate={-5} tape="lime" sizes="(min-width: 1024px) 30vw, 80vw" />
+              <Photo src={images.product} alt="Pocket Puddings mocha pouch on a desk" frame="polaroid" rotate={-5} tape="cream" sizes="(min-width: 1024px) 30vw, 80vw" />
             </div>
           </Reveal>
         </div>

@@ -4,20 +4,20 @@ import { Reveal } from "../Reveal";
 import { SectionTitle, TapeStrip, type TapeColor } from "../ui";
 
 const cards: { bg: string; tape: TapeColor; rotate: number }[] = [
-  { bg: "bg-butter", tape: "periwinkle", rotate: -2.5 },
-  { bg: "bg-white", tape: "tangerine", rotate: 1.8 },
-  { bg: "bg-sky", tape: "lime", rotate: 1.2 },
-  { bg: "bg-lime", tape: "butter", rotate: -1.6 },
+  { bg: "bg-white", tape: "navy", rotate: -2.5 },
+  { bg: "bg-cream", tape: "coral", rotate: 1.8 },
+  { bg: "bg-white", tape: "chocolate", rotate: 1.2 },
+  { bg: "bg-cream", tape: "blue", rotate: -1.6 },
 ];
 
 export function Testimonials() {
   return (
     <section id="reviews" className="relative">
-      <div className="relative bg-bubblegum px-6 py-28 sm:px-12" style={{ clipPath: tornClip(31, { top: true, bottom: true }, 1.2, 50) }}>
+      <div className="relative bg-[#e8e8e6] px-6 py-28 sm:px-12" style={{ clipPath: tornClip(31, { top: true, bottom: true }, 1.2, 50) }}>
         <div className="crumpled absolute inset-0 opacity-50 mix-blend-multiply" />
-        <div className="relative">
+        <div className="page-inner relative">
           <Reveal className="text-center">
-            <SectionTitle color="butter" rotate={-2}>
+            <SectionTitle color="blue" rotate={-2}>
               {testimonials.title}
             </SectionTitle>
           </Reveal>

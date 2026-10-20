@@ -1,5 +1,4 @@
 import { PreorderButton } from "../Preorder";
-import { PouchSticker } from "../Stickers";
 
 const links = [
   { href: "#how-it-works", label: "How it works" },
@@ -10,9 +9,8 @@ const links = [
 export function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between gap-4 px-5 py-4 sm:px-10">
-      <a href="#top" className="flex items-center gap-2">
-        <PouchSticker aria-hidden className="sticker h-10 w-auto" />
-        <span className="font-script text-2xl sm:text-3xl">Pocket Puddings</span>
+      <a href="#top" className="font-script text-2xl sm:text-3xl">
+        Pocket Puddings
       </a>
       <nav className="flex items-center gap-6 text-sm font-bold">
         {links.map((l) => (
@@ -20,7 +18,7 @@ export function Header() {
             {l.label}
           </a>
         ))}
-        <PreorderButton arrow={false} className="squish rounded-full border-[3px] border-ink bg-butter px-4 py-1.5 !shadow-[3px_3px_0_var(--color-ink)]">
+        <PreorderButton arrow={false} className="squish rounded-full border-[3px] border-ink bg-coral px-4 py-1.5 !shadow-[3px_3px_0_var(--color-ink)]">
           Pre-order
         </PreorderButton>
       </nav>
@@ -30,12 +28,12 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="bg-ink px-6 py-10 text-cream sm:px-12">
+    <footer className="bg-navy px-6 py-10 text-cream sm:px-12">
       <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <span className="font-script text-3xl">Pocket Puddings</span>
         <nav className="flex gap-6 text-sm font-semibold">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-butter">
+            <a key={l.href} href={l.href} className="hover:text-coral">
               {l.label}
             </a>
           ))}

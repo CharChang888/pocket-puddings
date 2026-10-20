@@ -2,8 +2,15 @@ import Image from "next/image";
 import { marquee } from "@/lib/content";
 import { images } from "@/lib/images";
 
-const photos = [images.product, images.bike, images.officeBag, images.pilates, images.commute, images.heroSqueeze];
-const colors = ["bg-bubblegum", "bg-butter", "bg-sky", "bg-tangerine", "bg-lime", "bg-periwinkle"];
+const photos = [images.product, images.bike, images.officeBag, images.pilates, images.commute, images.gym];
+const colors = [
+  "bg-coral text-ink",
+  "bg-chocolate text-cream",
+  "bg-blue text-cream",
+  "bg-navy text-cream",
+  "bg-chocolate text-cream",
+  "bg-coral text-ink",
+];
 
 function Track({ hidden = false }: { hidden?: boolean }) {
   return (

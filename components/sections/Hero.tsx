@@ -1,72 +1,59 @@
-import Image from "next/image";
 import { hero } from "@/lib/content";
 import { images } from "@/lib/images";
-import { tornClip } from "@/lib/torn";
-import { Reveal } from "../Reveal";
-import { SparkleSticker } from "../Stickers";
+import { ScatteredDoodles, StarDoodle } from "../Doodles";
+import { PaperRip } from "../PaperRip";
 import { PreorderButton } from "../Preorder";
-import { Photo, Tape, rotateVar } from "../ui";
+import { Reveal } from "../Reveal";
+import { Photo, Tape } from "../ui";
 
 export function Hero() {
   return (
     <section id="top">
-      <div
-        className="crumpled relative overflow-hidden px-5 pb-16 pt-24 sm:px-10 md:min-h-[640px] md:pb-10 md:pt-20"
-        style={{ clipPath: tornClip(11, { bottom: true }, 2, 46) }}
-      >
-        <div className="relative mx-auto aspect-[4/3] w-full max-w-[640px] md:absolute md:left-[6%] md:top-[9%] md:w-[56%]">
-          <div className="absolute -inset-3 bg-white/95 shadow-xl" style={{ clipPath: tornClip(4, undefined, 3.2, 26) }} />
-          <div className="grain absolute inset-0 overflow-hidden" style={{ clipPath: tornClip(9, undefined, 3.6, 26) }}>
-            <Image
-              src={images.heroSqueeze}
-              alt="Woman in a leopard-print blouse squeezing a pudding pouch"
-              fill
-              loading="eager"
-              fetchPriority="high"
-              placeholder="blur"
-              sizes="(min-width: 768px) 56vw, 92vw"
-              className="object-cover saturate-125"
-            />
+      <div className="crumpled relative overflow-hidden px-5 pb-32 pt-28 sm:px-10 md:pb-28 md:pt-28">
+        <ScatteredDoodles />
+        <div className="page-inner relative z-10 grid items-center gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-14">
+          <div className="relative mx-auto w-56 sm:w-64 md:mx-0 md:w-full md:max-w-[360px]">
+            <div className="animate-float">
+              <Photo
+                src={images.product}
+                alt="Pocket Puddings mocha protein coffee pudding pouch"
+                frame="polaroid"
+                rotate={6}
+                tape="cream"
+                sizes="(min-width: 768px) 30vw, 60vw"
+                eager
+              />
+            </div>
+            <StarDoodle className="absolute -bottom-4 -left-7 w-12 text-blue" style={{ rotate: "-10deg" }} />
           </div>
-        </div>
 
-        <h1 className="relative z-10 mt-8 flex flex-col items-start gap-3 text-5xl sm:text-6xl md:static md:mt-0 lg:text-7xl">
-          <span className="sr-only">{hero.titleWords.join(" ")}</span>
-          <Tape color="periwinkle" rotate={-4} className="md:absolute md:left-[44%] md:top-[11%]" as="span">
-            <span aria-hidden>{hero.titleWords[0]}</span>
-          </Tape>
-          <Tape color="tangerine" rotate={2} className="md:absolute md:left-[3%] md:top-[58%]" as="span">
-            <span aria-hidden>{hero.titleWords[1]}</span>
-          </Tape>
-          <Tape color="bubblegum" rotate={-3} className="md:absolute md:left-[24%] md:top-[74%]" as="span">
-            <span aria-hidden>{hero.titleWords[2]}</span>
-          </Tape>
-        </h1>
-
-        <div className="relative mx-auto mt-10 w-60 md:absolute md:right-[5%] md:top-[12%] md:mt-0 md:w-[30%] md:max-w-[340px]">
-          <div className="animate-float">
-            <Photo
-              src={images.product}
-              alt="Pocket Puddings mocha protein coffee pudding pouch"
-              frame="polaroid"
-              rotate={6}
-              tape="lime"
-              sizes="(min-width: 768px) 30vw, 60vw"
-              eager
-            />
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+            <h1 className="relative flex flex-col items-center gap-3 text-5xl sm:text-6xl md:items-start lg:text-7xl">
+              <span className="sr-only">{hero.titleWords.join(" ")}</span>
+              <Tape color="navy" rotate={-4} as="span">
+                <span aria-hidden>{hero.titleWords[0]}</span>
+              </Tape>
+              <Tape color="blue" rotate={2} className="md:ml-8" as="span">
+                <span aria-hidden>{hero.titleWords[1]}</span>
+              </Tape>
+              <Tape color="coral" rotate={-3} className="md:ml-3" as="span">
+                <span aria-hidden>{hero.titleWords[2]}</span>
+              </Tape>
+            </h1>
+            <p className="mt-8 max-w-md font-script text-3xl leading-tight text-navy sm:text-4xl">{hero.subhead}</p>
           </div>
-          <SparkleSticker className="sticker absolute -bottom-6 -left-8 w-16" style={rotateVar(-10)} />
         </div>
       </div>
 
+      <PaperRip />
+
       <div className="px-6 pb-16 pt-12 text-center sm:px-12">
         <Reveal className="mx-auto max-w-2xl">
-          <p className="font-script text-3xl text-cocoa sm:text-4xl">{hero.subhead}</p>
-          <p className="mt-6 text-lg leading-relaxed sm:text-xl">{hero.body}</p>
+          <p className="text-lg leading-relaxed sm:text-xl">{hero.body}</p>
           <p className="mt-6 text-lg font-bold sm:text-xl">{hero.kicker}</p>
           <div className="mt-9 flex flex-col items-center gap-4">
             <PreorderButton>{hero.cta}</PreorderButton>
-            <p className="font-hand text-2xl text-coral -rotate-2">
+            <p className="font-hand -rotate-2 text-2xl text-coral">
               <span aria-hidden>&#8618; </span>
               {hero.ctaNote}
             </p>

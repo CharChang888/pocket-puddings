@@ -34,12 +34,12 @@ export function PreorderProvider({
 
 export function PreorderButton({
   children,
-  variant = "cocoa",
+  variant = "navy",
   className,
   arrow = true,
 }: {
   children: ReactNode;
-  variant?: "cocoa" | "butter";
+  variant?: "navy" | "coral";
   className?: string;
   arrow?: boolean;
 }) {
@@ -86,7 +86,7 @@ function PreorderDialog({ open, onClose }: { open: boolean; onClose: () => void 
 
         <div className="text-center">
           <h2 id="preorder-title" className="text-4xl sm:text-5xl">
-            <Tape color="bubblegum" rotate={-2}>
+            <Tape color="coral" rotate={-2}>
               {preorder.title}
             </Tape>
           </h2>
@@ -106,7 +106,7 @@ function OrderOption() {
   const o = preorder.order;
   const { paymentLink } = useContext(PreorderContext);
   return (
-    <section className="relative flex flex-col border-[3px] border-ink bg-butter p-6 shadow-[6px_6px_0_var(--color-ink)] sm:p-7" style={{ rotate: "-1deg" }}>
+    <section className="relative flex flex-col border-[3px] border-ink bg-cream p-6 shadow-[6px_6px_0_var(--color-ink)] sm:p-7" style={{ rotate: "-1deg" }}>
       <p className="text-xs font-bold uppercase tracking-[0.25em] text-ink/60">{o.label}</p>
       <h3 className="mt-2 font-script text-4xl">{o.title}</h3>
       <p className="mt-4 font-bold">{o.pack}</p>
@@ -124,7 +124,7 @@ function OrderOption() {
           href={paymentLink}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${buttonClass("cocoa")} mt-6 w-full`}
+          className={`${buttonClass("navy")} mt-6 w-full`}
         >
           {o.cta}
           <span aria-hidden className="text-xl">
@@ -132,7 +132,7 @@ function OrderOption() {
           </span>
         </a>
       ) : (
-        <span className={`${buttonClass("cocoa")} mt-6 w-full cursor-not-allowed opacity-60`} aria-disabled>
+        <span className={`${buttonClass("navy")} mt-6 w-full cursor-not-allowed opacity-60`} aria-disabled>
           {o.unavailable}
         </span>
       )}
@@ -151,7 +151,7 @@ function ListOption() {
   const [state, formAction, pending] = useActionState(joinMailingList, initialState);
 
   return (
-    <section className="relative flex flex-col border-[3px] border-ink bg-sky p-6 shadow-[6px_6px_0_var(--color-ink)] sm:p-7" style={{ rotate: "1deg" }}>
+    <section className="relative flex flex-col border-[3px] border-ink bg-white p-6 shadow-[6px_6px_0_var(--color-ink)] sm:p-7" style={{ rotate: "1deg" }}>
       <p className="text-xs font-bold uppercase tracking-[0.25em] text-ink/60">{l.label}</p>
       <h3 className="mt-2 font-script text-4xl">{l.title}</h3>
       <p className="mt-4 flex-1 leading-relaxed">{l.body}</p>
@@ -174,9 +174,9 @@ function ListOption() {
             placeholder={l.placeholder}
             aria-invalid={state.status === "error" || undefined}
             aria-describedby={state.status === "error" ? "mailing-error" : undefined}
-            className="w-full rounded-full border-[3px] border-ink bg-white px-5 py-3.5 text-lg font-medium outline-none placeholder:text-ink/40 focus:ring-4 focus:ring-periwinkle"
+            className="w-full rounded-full border-[3px] border-ink bg-white px-5 py-3.5 text-lg font-medium outline-none placeholder:text-ink/40 focus:ring-4 focus:ring-blue"
           />
-          <button type="submit" disabled={pending} className={`${buttonClass("butter")} w-full disabled:opacity-60`}>
+          <button type="submit" disabled={pending} className={`${buttonClass("coral")} w-full disabled:opacity-60`}>
             {pending ? l.pending : l.cta}
           </button>
           {state.status === "error" && (

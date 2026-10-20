@@ -4,8 +4,8 @@ export const nutrition = {
 };
 
 export const hero = {
-  titleWords: ["Meet", "Pocket", "Puddings"],
-  subhead: "Serious nutrition. Squeezably delicious.",
+  titleWords: ["Protein", "Coffee", "Pudding"],
+  subhead: "Your new favourite grab-and-go snack",
   body: "A protein-packed, caffeinated pudding made for people with places to be, companies to build, and absolutely no time for another sad protein bar.",
   kicker: "Toss it in your bag. Squeeze whenever. Conquer whatever.",
   cta: "Pre-order now!",
@@ -89,25 +89,25 @@ export const testimonials = {
     {
       quote:
         "Pocket Puddings lives in my work bag. It has saved me from more accidental 4 p.m. \u2018lunches\u2019 than I\u2019d like to admit.",
-      name: "[Verified Customer Name]",
+      name: "Advik",
       role: "Investment Banking Associate",
     },
     {
       quote:
         "I used to choose between coffee, breakfast, and being on time. Now I don\u2019t have to\u2014and my calendar remains deeply unreasonable.",
-      name: "[Verified Customer Name]",
+      name: "Ryan",
       role: "Management Consultant",
     },
     {
       quote:
         "It tastes like dessert, has protein, and requires zero preparation. Frankly, it\u2019s more operationally efficient than most startups.",
-      name: "[Verified Customer Name]",
+      name: "Adeline",
       role: "Series A Founder",
     },
     {
       quote:
         "I keep one beside my laptop for the moment I realize I\u2019ve been debugging for six hours and have eaten nothing.",
-      name: "[Verified Customer Name]",
+      name: "Caroline",
       role: "Software Engineer",
     },
   ],

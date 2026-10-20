@@ -33,3 +33,20 @@ export function tornStripPath(seed: number, h = 40, teeth = 48) {
   }
   return `${d} L1000 ${h} Z`;
 }
+
+/** Jagged vertical tear used as the leading edge of the paper-rip animation. */
+export function verticalTearPath(seed: number, w = 36, h = 120, teeth = 18) {
+  const rand = rng(seed);
+  let d = `M${(w * 0.35).toFixed(1)} 0`;
+  for (let i = 1; i <= teeth; i++) {
+    const y = (i / teeth) * h;
+    const x = w * (0.12 + rand() * 0.76);
+    d += ` L${x.toFixed(1)} ${y.toFixed(1)}`;
+  }
+  for (let i = teeth - 1; i >= 0; i--) {
+    const y = (i / teeth) * h;
+    const x = w * (0.08 + rand() * 0.28);
+    d += ` L${x.toFixed(1)} ${y.toFixed(1)}`;
+  }
+  return `${d} Z`;
+}

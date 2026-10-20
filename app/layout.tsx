@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, Lobster, Quicksand } from "next/font/google";
+import { Caveat, Host_Grotesk, Quicksand } from "next/font/google";
 import "./globals.css";
 
 const quicksand = Quicksand({
@@ -7,9 +7,8 @@ const quicksand = Quicksand({
   subsets: ["latin"],
 });
 
-const lobster = Lobster({
-  variable: "--font-lobster",
-  weight: "400",
+const hostGrotesk = Host_Grotesk({
+  variable: "--font-host-grotesk",
   subsets: ["latin"],
 });
 
@@ -28,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${quicksand.variable} ${lobster.variable} ${caveat.variable} antialiased`}
+      className={`${quicksand.variable} ${hostGrotesk.variable} ${caveat.variable} antialiased`}
     >
       <body className="min-h-screen font-sans">{children}</body>
     </html>

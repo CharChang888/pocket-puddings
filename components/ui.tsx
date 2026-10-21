@@ -27,7 +27,7 @@ export function Tape({
 }) {
   return (
     <Tag
-      className={`tape font-script font-semibold leading-tight ${tapeColors[color]} ${className}`}
+      className={`tape max-w-full font-script font-semibold leading-tight ${tapeColors[color]} ${className}`}
       style={{ transform: `rotate(${rotate}deg)` }}
     >
       {children}
@@ -66,8 +66,8 @@ export function SectionTitle({
   className?: string;
 }) {
   return (
-    <h2 className={`text-4xl sm:text-5xl lg:text-6xl ${className}`}>
-      <Tape color={color} rotate={rotate} className="box-decoration-clone">
+    <h2 className={`max-w-full text-[1.85rem] leading-[1.15] sm:text-5xl lg:text-6xl ${className}`}>
+      <Tape color={color} rotate={rotate} className="box-decoration-clone max-w-full">
         {children}
       </Tape>
     </h2>
@@ -162,7 +162,7 @@ export function Photo({
 
 export function buttonClass(variant: "navy" | "coral" = "navy") {
   const look = variant === "navy" ? "bg-navy text-cream" : "bg-coral text-ink";
-  return `squish inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-ink px-7 py-3.5 text-lg font-bold tracking-wide ${look}`;
+  return `squish inline-flex max-w-full items-center justify-center gap-2 rounded-full border-[3px] border-ink px-5 py-3 text-center text-base font-bold tracking-wide sm:px-7 sm:py-3.5 sm:text-lg ${look}`;
 }
 
 export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {

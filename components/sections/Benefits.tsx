@@ -29,7 +29,7 @@ export function Benefits() {
   return (
     <div className="page-inner space-y-28 px-6 py-24 sm:px-12 lg:space-y-36">
       <section id={portability.id} className="grid items-center gap-14 lg:grid-cols-2">
-        <Reveal rotate={-3} className="relative mx-auto w-full max-w-lg pb-16 lg:pb-24">
+        <Reveal rotate={-3} className="relative mx-auto w-full max-w-lg pt-4 pb-20 lg:pb-24">
           <Photo src={images.officeBag} alt="Woman slipping a Pocket Puddings pouch into her work bag" rotate={-3} tape="cream" />
           <Photo
             src={images.commute}
@@ -37,7 +37,7 @@ export function Benefits() {
             filter="bw"
             frame="polaroid"
             rotate={7}
-            className="absolute -bottom-2 -right-4 w-[46%] sm:-right-10"
+            className="absolute -bottom-6 right-1 w-[42%] sm:-right-8 sm:w-[46%]"
             sizes="(min-width: 1024px) 20vw, 45vw"
           />
         </Reveal>
@@ -83,23 +83,23 @@ export function Benefits() {
       </section>
 
       <section id={fuel.id} className="grid items-center gap-14 lg:grid-cols-2">
-        <Reveal rotate={-2} className="relative mx-auto w-full max-w-lg">
+        <Reveal rotate={-2} className="relative mx-auto w-full max-w-lg pt-6 pb-6">
           <Photo src={images.bike} alt="Pocket Puddings pouch riding in a bike basket" rotate={-4} tape="blue" />
           <div
-            className="sticker absolute -right-4 -top-8 flex h-28 w-28 flex-col items-center justify-center rounded-full border-[3px] border-ink bg-coral text-center sm:-right-8 sm:h-32 sm:w-32"
+            className="sticker absolute right-1 top-1 flex h-20 w-20 flex-col items-center justify-center rounded-full border-[3px] border-ink bg-coral text-center sm:-right-6 sm:-top-4 sm:h-32 sm:w-32"
             style={rotateVar(10)}
           >
-            <span className="font-script text-4xl leading-none">{nutrition.protein}</span>
-            <span className="text-xs font-bold uppercase tracking-widest">protein</span>
+            <span className="font-script text-2xl leading-none sm:text-4xl">{nutrition.protein}</span>
+            <span className="text-[0.6rem] font-bold uppercase tracking-widest sm:text-xs">protein</span>
           </div>
           <div
-            className="sticker absolute -bottom-8 -left-4 flex h-28 w-28 flex-col items-center justify-center rounded-full border-[3px] border-ink bg-navy text-center text-white sm:-left-8 sm:h-32 sm:w-32"
+            className="sticker absolute bottom-2 left-1 flex h-20 w-20 flex-col items-center justify-center rounded-full border-[3px] border-ink bg-navy text-center text-white sm:-bottom-6 sm:-left-6 sm:h-32 sm:w-32"
             style={rotateVar(-8)}
           >
-            <span className="font-script text-4xl leading-none">{nutrition.caffeine}</span>
-            <span className="text-xs font-bold uppercase tracking-widest">caffeine</span>
+            <span className="font-script text-2xl leading-none sm:text-4xl">{nutrition.caffeine}</span>
+            <span className="text-[0.6rem] font-bold uppercase tracking-widest sm:text-xs">caffeine</span>
           </div>
-          <BoltDoodle className="absolute -bottom-10 right-10 w-10 text-blue" style={{ rotate: "14deg" }} />
+          <BoltDoodle className="absolute bottom-3 right-8 w-8 text-blue sm:-bottom-8 sm:right-10 sm:w-10" style={{ rotate: "14deg" }} />
         </Reveal>
         <Reveal delay={120}>
           <Eyebrow>{fuel.eyebrow}</Eyebrow>

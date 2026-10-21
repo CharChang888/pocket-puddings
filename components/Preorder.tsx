@@ -72,9 +72,9 @@ function PreorderDialog({ open, onClose }: { open: boolean; onClose: () => void 
       onClose={onClose}
       onClick={(e) => e.target === e.currentTarget && onClose()}
       aria-labelledby="preorder-title"
-      className="m-auto w-[calc(100%-1.5rem)] max-w-4xl overflow-visible bg-transparent p-0 text-ink backdrop:bg-ink/60 backdrop:backdrop-blur-sm open:animate-pop"
+      className="m-auto w-[calc(100%-1rem)] max-w-4xl overflow-visible bg-transparent p-0 text-ink backdrop:bg-ink/60 backdrop:backdrop-blur-sm open:animate-pop"
     >
-      <div className="crumpled relative max-h-[90dvh] overflow-y-auto px-5 pb-10 pt-12 sm:px-10" style={{ clipPath: tornClip(91, undefined, 1.2, 40) }}>
+      <div className="crumpled relative max-h-[90dvh] overflow-y-auto px-4 pb-8 pt-12 sm:px-10 sm:pb-10" style={{ clipPath: tornClip(91, undefined, 1.2, 40) }}>
         <button
           type="button"
           onClick={onClose}
@@ -85,7 +85,7 @@ function PreorderDialog({ open, onClose }: { open: boolean; onClose: () => void 
         </button>
 
         <div className="text-center">
-          <h2 id="preorder-title" className="text-4xl sm:text-5xl">
+          <h2 id="preorder-title" className="text-3xl sm:text-5xl">
             <Tape color="coral" rotate={-2}>
               {preorder.title}
             </Tape>
@@ -106,17 +106,17 @@ function OrderOption() {
   const o = preorder.order;
   const { paymentLink } = useContext(PreorderContext);
   return (
-    <section className="relative flex flex-col border-[3px] border-ink bg-cream p-6 shadow-[6px_6px_0_var(--color-ink)] sm:p-7" style={{ rotate: "-1deg" }}>
+    <section className="relative flex flex-col border-[3px] border-ink bg-cream p-4 shadow-[4px_4px_0_var(--color-ink)] sm:-rotate-1 sm:p-7 sm:shadow-[6px_6px_0_var(--color-ink)]">
       <p className="text-xs font-bold uppercase tracking-[0.25em] text-ink/60">{o.label}</p>
-      <h3 className="mt-2 font-script text-4xl">{o.title}</h3>
+      <h3 className="mt-2 font-script text-3xl sm:text-4xl">{o.title}</h3>
       <p className="mt-4 font-bold">{o.pack}</p>
-      <div className="mt-2 flex items-end gap-3">
-        <span className="text-2xl font-bold text-ink/50 line-through decoration-coral decoration-[3px]" aria-label={`Regular price ${o.fullPrice}`}>
+      <div className="mt-2 flex flex-wrap items-end gap-x-3 gap-y-2">
+        <span className="text-xl font-bold text-ink/50 line-through decoration-coral decoration-[3px] sm:text-2xl" aria-label={`Regular price ${o.fullPrice}`}>
           {o.fullPrice}
         </span>
-        <span className="font-script text-6xl leading-none">{o.price}</span>
+        <span className="font-script text-5xl leading-none sm:text-6xl">{o.price}</span>
         <span className="pb-1 text-sm font-bold">{o.priceNote}</span>
-        <span className="mb-1 ml-auto rotate-6 rounded-full border-[3px] border-ink bg-coral px-3 py-1 text-sm font-extrabold">20% off</span>
+        <span className="mb-1 rotate-6 rounded-full border-[3px] border-ink bg-coral px-3 py-1 text-sm font-extrabold">20% off</span>
       </div>
       <p className="mt-4 flex-1 leading-relaxed">{o.explainer}</p>
       {paymentLink ? (
@@ -151,9 +151,9 @@ function ListOption() {
   const [state, formAction, pending] = useActionState(joinMailingList, initialState);
 
   return (
-    <section className="relative flex flex-col border-[3px] border-ink bg-white p-6 shadow-[6px_6px_0_var(--color-ink)] sm:p-7" style={{ rotate: "1deg" }}>
+    <section className="relative flex flex-col border-[3px] border-ink bg-white p-4 shadow-[4px_4px_0_var(--color-ink)] sm:rotate-1 sm:p-7 sm:shadow-[6px_6px_0_var(--color-ink)]">
       <p className="text-xs font-bold uppercase tracking-[0.25em] text-ink/60">{l.label}</p>
-      <h3 className="mt-2 font-script text-4xl">{l.title}</h3>
+      <h3 className="mt-2 font-script text-3xl sm:text-4xl">{l.title}</h3>
       <p className="mt-4 flex-1 leading-relaxed">{l.body}</p>
 
       {state.status === "success" ? (

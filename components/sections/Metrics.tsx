@@ -28,7 +28,7 @@ export function Metrics() {
           {metrics.items.map((m, i) => (
             <Reveal key={m.label} delay={i * 90} rotate={looks[i].rotate} className="flex w-36 flex-col items-center text-center sm:w-40 lg:w-44">
               <dt className="order-2 mt-5 text-base font-semibold leading-snug text-cream/90">{m.label}</dt>
-              <dd className="order-1 text-5xl sm:text-6xl">
+              <dd className="order-1 max-w-full text-4xl sm:text-6xl">
                 <Tape color={looks[i].color} rotate={looks[i].rotate}>
                   {m.value}
                 </Tape>

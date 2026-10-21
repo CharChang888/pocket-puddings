@@ -12,7 +12,7 @@ export function FinalCta() {
         <div className="crumpled absolute inset-0 opacity-50 mix-blend-multiply" />
         <div className="page-inner relative grid items-center gap-14 lg:grid-cols-[1.3fr_1fr]">
           <Reveal>
-            <h2 className="font-script text-5xl leading-[1.15] text-ink sm:text-6xl">
+            <h2 className="max-w-full font-script text-4xl leading-[1.15] text-ink sm:text-6xl">
               <Tape color="navy" rotate={-2} className="box-decoration-clone">
                 {finalCta.title}
               </Tape>

@@ -184,6 +184,12 @@ body {
   transform: scale(0.94, 1.06) translate(3px, 3px);
   box-shadow: 2px 2px 0 var(--color-ink);
 }
+@media (hover: none) {
+  .squish:hover {
+    transform: none;
+    box-shadow: 5px 5px 0 var(--color-ink);
+  }
+}
 
 /* Lined notebook paper */
 .notebook {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Caveat, Host_Grotesk, Quicksand } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${quicksand.variable} ${hostGrotesk.variable} ${caveat.variable} antialiased`}
     >
-      <body className="min-h-screen font-sans">{children}</body>
+      <body className="min-h-screen font-sans">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
